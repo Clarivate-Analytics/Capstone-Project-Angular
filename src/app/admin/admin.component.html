@@ -1,0 +1,67 @@
+
+<div *ngIf="empty">
+  <img src="https://media.istockphoto.com/photos/close-up-view-of-workspace-with-stationery-glasses-and-coffee-cup-on-picture-id1202467130?k=20&m=1202467130&s=170667a&w=0&h=A49Y9r1lCsq_dpXm3u7lJw5rSbeVuUwQDVccouDKEwc=" 
+  style="height:757px; width:1535px; margin-top:70px; opacity: .8; margin-bottom: -50px;">
+  <button class="btn btn-info" style="font-size: larger; margin-left: 100px; margin-top: -1300px; background-color:rgb(62, 60, 60); position: relative;" (click)="logout()"> <h3> LOGOUT </h3> </button>
+  <img src="https://icon-library.com/images/icon-pending/icon-pending-2.jpg" style="border-radius: 10%; opacity: .8; width: 300px; height: 300px; margin-left: 420px; margin-top: -910px; opacity: .7;">
+  <label style="font-family:cursive; font-size:40px; margin-top: -280px; margin-left: -360px; position: absolute; color: dimgray; opacity: .5;"> No pending requests </label>
+  <button class="btn btn-outline-dark" (click)="refresh()" style="font-size: 35px; font-family: Georgia; 
+  border: 3px solid; width: 200px; margin-left: 680px; margin-top: -400px; border-radius: 10px; position: relative;"> REFRESH </button>
+  <button class="btn btn-success" style="margin-top: -200px; font-size: 35px; font-family: Georgia; margin-left: -660px; position: relative;" routerLink="/approved"> APPROVED </button>
+  <button class="btn btn-danger" style="margin-top: -200px; font-size: 35px; font-family: Georgia; margin-left: 700px; position: relative;" routerLink="/rejected"> REJECTED </button>
+</div>
+
+<div class="full" *ngIf="!empty">
+    <img class="pic" src="https://media.istockphoto.com/photos/close-up-view-of-workspace-with-stationery-glasses-and-coffee-cup-on-picture-id1202467130?k=20&m=1202467130&s=170667a&w=0&h=A49Y9r1lCsq_dpXm3u7lJw5rSbeVuUwQDVccouDKEwc=" style="height:757px; width:1535px; margin-top:70px; opacity: .8;">
+  
+  
+    <div class="info">
+  <h1 style="color:black ; font-family: cursive; text-align: center;"> PENDING REQUESTS </h1>
+  
+  <button class="btn btn-dark" style="font-size: larger; margin-left: 200px; margin-top: -50px; background-color:rgb(62, 60, 60);" (click)="logout()"> <h3> LOGOUT </h3> </button>
+  
+    <div class="form-outline" style="margin-left: 100px">
+      <input type="search" id="form1" class="ph form-control" [(ngModel)]="searchInput" placeholder="Search"
+      style="width:500px; margin-left: 910px; font-size:20px;"/>
+    </div>
+  <br>
+  
+  <table class="table align-middle">
+    <thead style="background-color: grey; opacity:.8 ;">
+      <tr style="color: black ;">
+        <th> EMPLOYEE NAME </th>
+        <th> FURNITURE NEEDED </th>
+        <th> IT EQUIPMENT NEEDED </th>
+        <th> ACTION </th>
+      </tr>
+    </thead>
+    
+    <tbody *ngFor="let item of unresponded | search : searchInput | paginate: { itemsPerPage: count, currentPage: p }" style="background-color:white; opacity:.7;"> 
+      <tr style="color: black ;">
+        <td> {{ item.empName }} </td>
+        <td> {{ item.furniture }} </td>
+        <td> {{ item.equipment }} </td>
+        <td>
+          <button  style="border: solid 2px white; border-radius:30% ;" (click)="approved(item.orderId)" class="a">
+            <img src="https://w7.pngwing.com/pngs/383/791/png-transparent-check-mark-green-tick-miscellaneous-trademark-logo-thumbnail.png" style="border-radius:50%; width:30px;"><br><b> APPROVE </b></button>
+          
+            &nbsp; &nbsp;
+  
+          <button  style="border: solid 2px white; border-radius:30% ;" (click)="rejected(item.orderId)" class="a">
+            <img src="https://w7.pngwing.com/pngs/41/41/png-transparent-red-x-button-icon-error-http-404-icon-red-cross-mark-file-miscellaneous-trademark-heart-thumbnail.png" style="border-radius:50%; width:30px;"><br><b> &nbsp; REJECT &nbsp; </b></button>
+
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <button class="btn btn-success" style="margin-top: 100px; font-size: 35px; font-family: Georgia; margin-left: 140px; position: fixed;" routerLink="/approved"> APPROVED </button>
+    <button class="btn btn-danger" style="margin-top: 100px; font-size: 35px; font-family: Georgia; margin-left: 1200px; position: fixed;" routerLink="/rejected"> REJECTED </button>
+
+    <div class="text-center" *ngIf="pg">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  
+  </div>
+  </div>

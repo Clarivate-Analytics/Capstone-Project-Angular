@@ -1,0 +1,61 @@
+<div class="full">
+
+    <br>
+    <h1 style="color:white ; font-family: cursive; text-align: center;"> REQUEST DETAILS </h1>
+    
+    <button class="btn btn-primary" style="font-size: larger; margin-left: 100px; margin-top: -20px; width: 120px;" routerLink="/employee"> <h3> BACK </h3> </button>
+    
+    <div class="d-flex justify-content-center" style="margin-left: -50px ;">
+    <div class="col col-md-6">
+      <form [formGroup] = "EmployeeForm" (ngSubmit) = "place_order()">
+        <div>
+          <label style="color:black ; font-size: large;"> EMPLOYEE ID </label>
+          <input type="text" class="form-control form-control-lg" name="empID" formControlName="empID" [(ngModel)]="empid" readonly/>
+      </div>
+      <br>
+    
+        <div>
+          <label style="color:black ; font-size: large;"> EMAIL </label>
+          <input type="email" class="form-control form-control-lg" name="email" formControlName="email" [(ngModel)]="mailid" readonly/>
+      </div>
+      <br>
+    
+      <div>
+    
+        <label style="color:white ; font-size: large;"> FURNITURE NEEDED </label>
+    
+        <select class="form-control form-control-lg" name="furniture" formControlName="furniture" [(ngModel)]="orders.Furniture">
+          <option value=""> Choose a Furniture </option>
+          <option *ngFor="let x  of furn" [value]="x"> {{ x }} </option>
+        </select>
+      </div>
+      <br>
+    
+      <div>
+    
+        <label style="color:whitesmoke ; font-size: large;"> IT EQUIPMENT NEEDED </label>
+    
+        <select class="form-control form-control-lg" name="equipment" formControlName="equipment" [(ngModel)]="orders.Equipment">
+          <option value=""> Choose an IT Equipment </option>
+          <option *ngFor="let x  of itequp" [value]="x"> {{ x }} </option>
+        </select>
+      </div>
+      <br>
+    
+      <div>
+    
+        <label style="color:white ; font-size: large;"> DELIVERY ADDRESS </label>
+        <input type="text" class="form-control form-control-lg" name="address" formControlName="address" [(ngModel)]="orders.Address"/> 
+        <span style="color:indigo;" *ngIf="address?.invalid && address?.touched"> *Address Field Required </span>
+    
+      </div>
+      <br>
+        
+        <button type="submit" class="btn btn-info" [disabled]="EmployeeForm.invalid" style="font-size: 25px;
+        margin-left: 350px;"> <b> SUBMIT </b> </button>
+      </form>
+      
+    </div>
+    
+    </div>
+    

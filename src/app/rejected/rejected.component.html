@@ -1,0 +1,43 @@
+<div class="full">
+    <img class="pic" src="https://png.pngtree.com/thumb_back/fh260/background/20210324/pngtree-3d-home-office-virtual-background-world-map-image_593365.jpg" style="height:745px; width:1535px; margin-top:80px; opacity: .8;">
+  
+  
+    <div class="info">
+  <h1 style="color:black ; font-family: cursive; text-align: center;"> REJECTED REQUESTS </h1>
+  
+  <button class="btn btn-dark" style="font-size: larger; margin-left: 200px; margin-top: -50px;" routerLink="/admin"> <h3>BACK </h3> </button>
+  
+    <div class="form-outline" style="margin-left: 100px">
+      <input type="search" id="form1" class="ph form-control" [(ngModel)]="searchInput" placeholder="Search"
+      style="width:500px; margin-left: 910px; font-size:20px;"/>
+    </div>
+    <br>
+  
+  
+  <table class="table align-middle">
+    <thead style="background-color: grey; opacity:.8 ;">
+      <tr style="color: black ;">
+        <th> EMPLOYEE NAME </th>
+        <th> FURNITURE NEEDED </th>
+        <th> IT EQUIPMENT NEEDED </th>
+        <th> ADMIN RESPONDED </th>
+      </tr>
+    </thead>
+    
+    <tbody *ngFor="let item of rejected | find : searchInput | paginate: { itemsPerPage: count, currentPage: p }" style="background-color:white; opacity:.7;"> 
+      <tr style="color: black ;">
+        <td> {{ item.empName }} </td>
+        <td> {{ item.furniture }} </td>
+        <td> {{ item.equipment }} </td>
+        <td> {{ item.adm_ID }} </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  
+    <div class="text-center" *ngIf="pg">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  
+  </div>
+  </div>

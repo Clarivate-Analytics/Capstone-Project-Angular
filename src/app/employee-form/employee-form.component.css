@@ -1,0 +1,16 @@
+
+.full {
+    margin-top:75px;
+    height: 750px;
+    background-image: url("https://t4.ftcdn.net/jpg/02/19/97/33/360_F_219973381_ADkrzGHo1b8vDWn96nJWUVdmjHEBe1if.jpg");
+    background-repeat: no-repeat;
+    background-size: 1600px 750px;
+}
+
+table {
+    margin-top: 100px;
+    text-align: center;
+    margin-left: 20px;
+    width: 1480px;
+    border: 2px solid rgb(215, 72, 72);
+}

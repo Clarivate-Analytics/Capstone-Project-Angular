@@ -1,0 +1,56 @@
+
+<div>
+    <img class="pic" src="https://img.freepik.com/premium-photo/fast-delivery-by-scooter-bike-van-with-mobile-ecommerce-concept-online-food-shopping-order-with-route-map-webpage-app-design-red-gray-background-isometric-3d-render-wide-screen_156429-3115.jpg?w=2000"
+    style="opacity: .2;">
+  
+    <div class="info">
+      <h1 style="color:black ; font-family: cursive; text-align: center;"> ORDER DETAILS </h1>
+  
+      <button class="btn btn-light" style="font-size: larger; margin-left: 100px; margin-top: -100px;" (click)="logout()"> <h3> LOGOUT </h3> </button>
+  
+      <div class="form-outline" style="margin-left: 100px">
+        <input type="search" id="form1" class="ph form-control" [(ngModel)]="searchInput" placeholder="Search for Furniture, IT Equipment"
+      style="width:500px; margin-left: 910px; font-size:20px;"/>
+      </div>
+      <br>
+  
+  <table class="table align-middle mb-0">
+      <thead style="background-color:skyblue ; opacity: .8;">
+        <tr>
+          <th> ORDER ID </th>
+          <th> FURNITURE </th>
+          <th> IT EQUIPMENT </th>
+          <th> DELIVERY ADDRESS </th>
+          <th> DELIVERY DETAILS </th>
+        </tr>
+      </thead>
+      
+      <tbody *ngFor="let item of orders | search : searchInput | paginate: { itemsPerPage: count, currentPage: p }">
+        <tr>
+          <td> {{ item.orders_ID }} </td>
+          <td> {{ item.furniture }} </td>
+          <td> {{ item.equipment }} </td>
+          <td> {{ item.address }} </td>
+          <td>
+            <form [formGroup] = "Del_Date_Form" (ngSubmit) = "enter_date(item.orders_ID, p)" *ngIf="item.date=='' || item.date=='0'">
+              <input type="date" name="del_date" formControlName="del_date" value = "del_date" [min]="formatted_date"> &nbsp; &nbsp;
+              <button class="btn btn-success" type="submit"> Send Email </button>
+            </form>
+            <div *ngIf="item.date!='' && item.date!='0'" style="margin-left: 50px;">
+              <td> {{ item.date }} : Updated by {{ item.ven_ID }} &nbsp; &nbsp;
+              <button class="btn btn-danger" type="submit" (click)="update(item.orders_ID, p)"> Update </button> </td>
+            </div>
+          </td>
+        </tr>
+          
+        
+      </tbody>
+    </table>
+  
+    <div class="text-center" *ngIf="pg">
+      <pagination-controls (pageChange)="p = $event"
+      (currentPage) = p></pagination-controls>
+    </div>
+  
+  </div>
+  </div>

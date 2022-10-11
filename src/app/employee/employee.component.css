@@ -1,0 +1,28 @@
+.pic
+{
+    margin-left: 350px;
+    height: 600px;
+    width: 800px;
+}
+
+.tabular
+{
+    position: absolute;
+    height: 700px;
+    width: 1200px;
+    text-align: center;
+    margin-left: 60px;
+    
+}
+
+.info
+{
+    position: absolute;
+    margin-top: -700px;
+    margin-left: 10px;
+}
+
+.a 
+{
+    cursor: no-drop;
+}

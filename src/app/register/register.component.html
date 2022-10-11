@@ -1,0 +1,82 @@
+
+<div class="left">
+    <div class="pic">
+    </div>
+    <br>    
+    <p style="font-size: large; color: grey; margin-left: 100px;"> Have an account? <a routerLink="">Login</a></p>
+</div>
+
+
+<div class="reg">
+    <form [formGroup] = "registrationForm" (ngSubmit) = "register()">
+        <div>
+            <label style="color:black ; font-size: large;"> EMPLOYEE ID </label>
+            <input type="text" class="form-control form-control-lg" name="empID" formControlName="empID" placeholder="Employee ID"
+            style="width:400px ; font-size: large; margin-top: -45px ; margin-left: 150px; text-align: center;" [(ngModel)]="details.EmpCode"/> 
+            <span style="color:red; margin-left: 150px;" *ngIf="empID?.invalid && empID?.touched"> *Employee ID Required </span>
+        </div>
+        <br>
+
+        <div>
+            <label style="color:black ; font-size: large;"> FIRST NAME </label>
+            <input type="text" class="form-control form-control-lg" name="firstName" formControlName="firstName" placeholder="First Name"
+            style="width:400px ; font-size: large; margin-top: -45px ; margin-left: 150px; text-align: center;" [(ngModel)]="details.FirstName"/> 
+            <span style="color:red; margin-left: 150px;" *ngIf="firstName?.invalid && firstName?.touched"> *First Name Required </span>
+        </div>
+        <br>
+
+        <div>
+            <label style="color:black ; font-size: large;"> LAST NAME </label>
+            <input type="text" class="form-control form-control-lg" name="lastName" formControlName="lastName" placeholder="Last Name"
+            style="width:400px ; font-size: large; margin-top: -45px ; margin-left: 150px; text-align: center;" [(ngModel)]="details.LastName"/> 
+            <span style="color:red; margin-left: 150px;" *ngIf="lastName?.invalid && lastName?.touched"> *Last Name Required </span>
+        </div>
+        <br>
+
+        <div>
+            <label style="color:black; font-size: large;"> ROLE </label> 
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <input type="radio" name="role" formControlName="role" value="Admin" [(ngModel)]="details.Role"/> 
+            <label style="color:black ; font-size: large;"> &nbsp; Admin  &nbsp;&nbsp; </label>
+
+            <input type="radio" name="role" formControlName="role" value="Employee" [(ngModel)]="details.Role"/> 
+            <label style="color:black ; font-size: large;"> &nbsp; Employee </label> &nbsp;&nbsp; 
+
+            <input type="radio" name="role" formControlName="role" value="Vendor" [(ngModel)]="details.Role"/> 
+            <label style="color:black ; font-size: large;"> &nbsp; Vendor </label> &nbsp;&nbsp; 
+            <span style="color:red; margin-left: 150px;" *ngIf="role?.invalid && role?.touched"> *Required </span>
+        </div>
+        <br>
+
+        <div>
+            <label style="color:black ; font-size: large;"> EMAIL </label>
+            <input type="email" class="form-control form-control-lg" name="email" formControlName="email" (input)="epass()" (click)="epass()"
+            style="width:400px ; font-size: large; margin-top: -45px ; margin-left: 150px; text-align: center;" [(ngModel)]="details.Email" placeholder="Email"/> 
+            <span style="color:red; margin-left: 150px;" *ngIf="elength && email?.touched"> *Email Required </span>
+            <span style="color:red; margin-left: 150px;" *ngIf="email?.invalid && !elength"> *Invalid Email Format </span>
+        </div>
+        <br>
+
+        <div>
+            <label style="color:black ; font-size: large;"> PASSWORD </label>
+            <input type="password" class="form-control form-control-lg" name="password" formControlName="password" (input)="pass()" (click)="pass()"
+            style="width:400px ; font-size: large; margin-top: -45px ; margin-left: 150px; text-align: center;" [(ngModel)]="details.Password" placeholder="Password"/> 
+            <span style="color:red; margin-left: 150px;" *ngIf="empty && password?.touched"> *Password Required </span> <br>
+            <div *ngIf="!empty" style="margin-left: 150px;">
+                <span [style.color]="(uppercase) ? wrong : correct"> *Must contain atleast 1 uppercase </span> <br>
+                <span [style.color]="(lowercase) ? wrong : correct"> *Must contain atleast 1 lowercase </span> <br>
+                <span [style.color]="(number) ? wrong : correct"> *Must contain atleast 1 number </span> <br>
+                <span [style.color]="(spclcase) ? wrong : correct"> *Must contain atleast 1 special character [$@!%*?&+-] </span> <br>
+                <span [style.color]="(length) ? wrong : correct"> *Must be within length of 4-10 </span> <br>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <button type="submit" class="btn btn-info"
+            style="padding-left: 2.5rem; padding-right: 2.5rem; margin-left: 200px;" [disabled]="registrationForm.invalid"> <h4> Register </h4> </button>
+
+    </form>
+    
+
+</div>

@@ -1,0 +1,28 @@
+.pic 
+{
+    margin-top: 80px;
+    height: 745px;
+    width: 1530px;
+}
+
+.info
+{
+    position: absolute;
+    margin-top: -700px;
+}
+
+table {
+    text-align: center;
+    margin-left: 30px;
+    width: 1480px;
+    font-size: large;
+}
+
+.ph
+{
+    background-image: url(https://image.shutterstock.com/image-vector/search-icon-any-purposes-260nw-1697401045.jpg);
+    background-position: -8px;
+    background-repeat: no-repeat;
+    background-size: 60px 60px;
+    padding-left: 50px;
+}

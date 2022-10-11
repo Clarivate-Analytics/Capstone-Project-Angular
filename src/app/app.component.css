@@ -1,0 +1,17 @@
+.page {
+    /* background: url("https://png.pngtree.com/thumb_back/fh260/background/20201103/pngtree-abstract-futuristic-circuit-board-illustration-high-computer-technology-background-image_448438.jpg");
+    background-repeat: no-repeat; */
+    height: 955px;
+    width: 1530px;
+    background-size: 1550px 1050px;
+    margin-top: -205px;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 130px;
+}
+

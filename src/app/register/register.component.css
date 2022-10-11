@@ -1,0 +1,24 @@
+.reg {
+    margin-top: -600px;
+    margin-left: 850px;
+    height: 570px;
+    width: 600px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.left {
+    margin-top: 150px;
+    margin-left: 150px;
+    height: 650px;
+    width: 550px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.pic {
+    margin-left: 50px;
+    height: 550px;
+    width: 550px;
+    background-image: url("https://colorlib.com/etc/regform/colorlib-regform-7/images/signin-image.jpg");
+    background-repeat: no-repeat;
+    background-size: 450px;
+}
