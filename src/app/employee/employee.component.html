@@ -1,12 +1,12 @@
 
 
 <div class="pic" *ngIf="empty">
-  <button class="btn btn-danger" routerLink="" style="font-size: 35px; font-family: Georgia; 
+  <button class="btn btn-danger" (click)="logout()" style="font-size: 35px; font-family: Georgia; 
     border: 3px solid; width: 200px; margin-left: 900px; margin-top: 150px; border-radius: 10px;"> LOGOUT </button>
     <img src="https://i.pinimg.com/originals/6f/fd/64/6ffd64c5366898c59bbc91d9aec935c3.png" style="border-radius: 50%; opacity: .5; 
-    margin-top: -100px;">
-    <label style="font-family:cursive; font-size:40px; margin-top: 400px; margin-left: -540px; position:absolute; color: dimgray; opacity: .5;"> No requests yet...! </label>
-    <button class="btn btn-outline-primary" routerLink="/employee_form" style="font-size: 35px; font-family: Georgia; 
+    margin-top: -150px;">
+    <label style="font-family:cursive; font-size:40px; margin-top: 300px; margin-left: -540px; position:absolute; color: dimgray; opacity: .5;"> No requests yet...! </label>
+    <button class="btn btn-outline-primary" routerLink="/employee_form" style="font-size: 35px; font-family: Georgia; margin-top: -50px ;
     border: 3px solid; width: 200px; margin-left: 300px; border-radius: 20px;"> REQUEST </button>
   </div>
   

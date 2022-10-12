@@ -70,7 +70,7 @@ export class RegisterComponent implements OnInit {
           this.id_flag = true
           break
         }
-        else if(emp.email == this.details.Email)
+        else if(emp.email == this.details.Email.toLowerCase())
         {
           this.email_flag = true
           break

@@ -30,7 +30,6 @@ export class EmployeeComponent implements OnInit {
   { 
     this.id = localStorage.getItem("EMPID")
     console.log(this.id);
-    this.refresh()
     
     this.serve.get_single_employee_details(this.id).subscribe(res =>
       {
@@ -79,7 +78,7 @@ export class EmployeeComponent implements OnInit {
 
         this.getdata()
       })     
-   
+      this.refresh()
   }
 
   getdata()
