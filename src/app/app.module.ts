@@ -15,6 +15,7 @@ import { ApprovedComponent } from './approved/approved.component';
 import { RejectedComponent } from './rejected/rejected.component';
 import { VendorComponent } from './vendor/vendor.component';
 import { SearchPipe } from './Pipes/search.pipe';
+import { VensearchPipe } from './Pipes/vensearch.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FindPipe } from './Pipes/find.pipe';
 import { ToastrModule } from 'ngx-toastr';
@@ -33,7 +34,8 @@ import { TokenBindingInterceptor } from './interceptor/token-binding.interceptor
     RejectedComponent,
     VendorComponent,
     SearchPipe,
-    FindPipe
+    FindPipe,
+    VensearchPipe
   ],
   imports: [
     BrowserModule,

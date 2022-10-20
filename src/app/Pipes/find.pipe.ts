@@ -15,7 +15,7 @@ export class FindPipe implements PipeTransform {
 
     for(let emp of value)
     {
-      if((emp['emp_ID']).toLowerCase().startsWith(searchInput.toLowerCase()))
+      if((emp['empName']).toLowerCase().startsWith(searchInput.toLowerCase()))
       {
         employee.push(emp)
       }

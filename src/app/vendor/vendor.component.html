@@ -25,7 +25,7 @@
         </tr>
       </thead>
       
-      <tbody *ngFor="let item of orders | search : searchInput | paginate: { itemsPerPage: count, currentPage: p }">
+      <tbody *ngFor="let item of orders | vensearch : searchInput | paginate: { itemsPerPage: count, currentPage: p }">
         <tr>
           <td> {{ item.orders_ID }} </td>
           <td> {{ item.furniture }} </td>

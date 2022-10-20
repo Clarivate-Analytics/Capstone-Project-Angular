@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name:'search'
+    name:'vensearch'
 })
-export class SearchPipe implements PipeTransform {
+export class VensearchPipe implements PipeTransform {
     transform(value : any, searchInput: string): any[]{     
 
 
@@ -15,11 +15,7 @@ export class SearchPipe implements PipeTransform {
 
     for(let emp of value)
     {
-      if(emp['empName'].toLowerCase().includes(searchInput.toLowerCase()))
-      {
-        employee.push(emp)
-      }
-      else if(emp['furniture'].toLowerCase().includes(searchInput.toLowerCase()))
+      if(emp['furniture'].toLowerCase().includes(searchInput.toLowerCase()))
       {
         employee.push(emp)
       }
